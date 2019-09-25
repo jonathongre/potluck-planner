@@ -25,7 +25,7 @@ const Login = (props) => {
     return (
         <div className='auth-page'>
             <div className='auth-top'>
-            <img src={process.env.PUBLIC_URL + "/pot1_200x200.png"} alt='' className='logo'/>
+            <img className='logo' src={process.env.PUBLIC_URL + "/pot1_200x200.png"} alt='' />
             <h1>Login</h1>
             </div>
             <form className='auth-form'>
