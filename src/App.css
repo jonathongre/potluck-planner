@@ -112,7 +112,12 @@ html {
   border: 1px solid black;
   width: 300px;
   border-radius: 10px;
-  background: #fff;
+  background: #21812f;
+  color: #fff;
+}
+
+.item-card p {
+  font-size: 20px;
 }
 
 .item-info {
@@ -122,12 +127,19 @@ html {
 }
 
 .btnctnr {
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
 .btnctnr h4 {
   margin: 1rem;
+  background: #30BF45;
+  padding: .5rem;
+  width: 50px;
+  text-align: center;
+  box-shadow: 1px 2px 3px #000;
+  border-radius: 10px;
 }
 
 .accordion {
@@ -160,8 +172,15 @@ html {
   flex-direction: column;
 }
 
-.homePage h2 {
+.nav-button {
   align-self: center;
+  background: #D9A404;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px #000;
+  color: #fff;
+  width: 75%;
+  text-align: center;
 }
 
 .home-top {

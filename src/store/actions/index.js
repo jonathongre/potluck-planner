@@ -68,3 +68,17 @@ export const getInfo = (myInfo) => dispatch => {
         dispatch({type: FETCH_FAILURE, payload: err.response})
     });
 }
+
+//Get All Users/Friends
+export const getUsers = (friends) => dispatch => {
+    dispatch({ type: FETCH_START});
+    axiosWithAuth()
+    .get(`/accounts/users`, friends)
+    .then(res => {
+        console.log('fetched items', res)
+        dispatch({type:FETCH_SUCCESS, payload:res.data})
+    })
+    .catch(err => {
+        dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+}
