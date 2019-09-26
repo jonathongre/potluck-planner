@@ -36,6 +36,15 @@ const Home = () => {
           .catch(err => console.log(err.response));
     }
 
+    const [view1, setView1] = useState(false);
+    const [view2, setView2] = useState(false);
+    const toggleView1 = () => {
+        setView1(!view1)
+    }
+    const toggleView2 = () => {
+      setView2(!view2)
+  }
+
   console.log(invites)
   return (
     <div className='homePage'>
@@ -43,14 +52,14 @@ const Home = () => {
         <img className='logo' src={process.env.PUBLIC_URL + "/pot1_200x200.png"} alt='' />
         <h1>Hello {account.firstname}!</h1>
       </div>
-      <h2>My Potlucks</h2>
-      <div className='event-container'>
+      <h2 onClick={toggleView1}>My Potlucks</h2>
+      {view1 ?  <div className='event-container'>
         {events.map(data => <EventCard key={data.id} data={data}/>)}
-      </div>
-      <h2>My Invitations</h2>
-      <div className='event-container'>
+      </div> : null} 
+        <h2>My Invitations</h2>
+        {view2 ?  <div className='event-container'>
         {invites.map(data => <InviteCard key={data.id} data={data}/>)}
-      </div>
+      </div> : null} 
     </div>   
   );
 };

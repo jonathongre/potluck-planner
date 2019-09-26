@@ -24,6 +24,7 @@ html {
 .landingPage img {
   align-self: center;
   width: 350px;
+  height:350px;
 }
 
 .landingPage h1 {
