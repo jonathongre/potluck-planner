@@ -56,13 +56,39 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 
-export const getInfo = (myInfo) => dispatch => {
+export const getAccount = (myAccount) => dispatch => {
     dispatch({ type: FETCH_START});
     axiosWithAuth()
-    .get(`/accounts`, myInfo)
+    .get(`/accounts`, myAccount)
     .then(res => {
-        console.log('fetched items', res)
-        dispatch({type:FETCH_SUCCESS, payload:res.data})
+        console.log('fetched account', res.data.myAccount[0])
+        dispatch({type:FETCH_SUCCESS, payload:res.data.myAccount[0]})
+    })
+    .catch(err => {
+        dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+}
+
+export const getEvents = (myEvents) => dispatch => {
+    dispatch({ type: FETCH_START});
+    axiosWithAuth()
+    .get(`/accounts`, myEvents)
+    .then(res => {
+        console.log('fetched events', res.data.myEvents)
+        dispatch({type:FETCH_SUCCESS, payload:res.data.myEvents})
+    })
+    .catch(err => {
+        dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+}
+
+export const getInvites = (myEvents) => dispatch => {
+    dispatch({ type: FETCH_START});
+    axiosWithAuth()
+    .get(`/accounts`, myEvents)
+    .then(res => {
+        console.log('fetched potlucks', res.data.potlucks)
+        dispatch({type:FETCH_SUCCESS, payload:res.data.potlocks})
     })
     .catch(err => {
         dispatch({type: FETCH_FAILURE, payload: err.response})
